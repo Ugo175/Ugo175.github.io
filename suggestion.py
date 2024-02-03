@@ -1,5 +1,5 @@
 class Solution:
-    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+    def suggestedProducts(self, products, searchWord):
         suggestions= []
         for i in range(len(searchWord)):
             suggestions.append([])
