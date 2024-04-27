@@ -1,5 +1,5 @@
 def decimal_to_nbase(number, base_n):
-  
+    num = int(number)
     if base_n == 10:
         return number
   
@@ -9,9 +9,9 @@ def decimal_to_nbase(number, base_n):
     extra_digits = "0123456789ABCDEF"
     remainders = []
 
-    while number > 0:
-        remainders.append(str(int(number) % base_n)) 
-        number //= base_n
+    while num > 0:
+        remainders.append(str(num % base_n)) 
+        num //= base_n
     
     if base_n < 10:
         return "".join(remainders[::-1])
@@ -54,7 +54,7 @@ def nbase_to_decimal(number, base_n):
 
 
 while True:
-    numero = (input("Enter a number: "))
+    numero = (input("Enter a number: ")).upper()
     base_to = int(input("Enter the base you wish to convert to: "))
     from_base = int(input("Enter the base of the number: "))
 
@@ -67,5 +67,5 @@ while True:
     elif base_to ==16:
         print(f"The hexadecimal equivalent of {numero} base {from_base} is {hexadecimal_eq}")
     elif base_to == 10:
-        print(f"The decimal equivalent of {numero} in base {from_base} is {decimal_eq}")
+        print(f"The decimal equivalent of {numero} base {from_base} is {decimal_eq}")
 
